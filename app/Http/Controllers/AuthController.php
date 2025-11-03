@@ -82,4 +82,8 @@ class AuthController extends Controller
         return redirect()->to('/login');
     }
 
+    public function newUser() {
+        return view('new_user');
+    }
+
 }

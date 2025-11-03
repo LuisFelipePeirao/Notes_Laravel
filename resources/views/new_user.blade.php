@@ -1,6 +1,6 @@
 @extends('layouts.main_layout')
 
-@section('title', 'Login')
+@section('title', 'New User')
 
 @section('content')
     <div class="container mt-5">
@@ -19,7 +19,7 @@
                             <form action="/loginSubmit" method="post">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="text_username" class="form-label">Username</label>
+                                    <label for="text_username" class="form-label">Create an Username</label>
                                     <input type="text" class="form-control bg-dark text-info" name="text_username" value="{{ old('text_username') }}">
                                     {{-- Show error --}}
                                     @error('text_username')
@@ -27,7 +27,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="text_password" class="form-label">Password</label>
+                                    <label for="text_password" class="form-label">Create a Password</label>
                                     <input type="password" class="form-control bg-dark text-info" name="text_password" value="{{ old('text_password') }}">
                                     {{-- Show error --}}
                                     @error('text_password')
@@ -35,8 +35,16 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <button type="submit" class="btn btn-secondary w-100">LOGIN</button>
-                                    <div class="text">Does not have account? <a href="{{ route('newUser') }}">Create now!</a></div>
+                                    <label for="text_password" class="form-label">Confirm your Password</label>
+                                    <input type="password" class="form-control bg-dark text-info" name="text_password" value="{{ old('text_password') }}">
+                                    {{-- Show error --}}
+                                    @error('text_password')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-secondary w-100">CREATE ACCOUNT</button>
+                                    <div class="text">Alredy have account? <a href="{{ route('login') }}">Sign In!</a></div>
                                 </div>
                             </form>
 

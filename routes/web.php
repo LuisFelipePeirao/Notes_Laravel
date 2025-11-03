@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware([CheckIsNotLogged::class])->group(function(){
 
-    Route::get('/login', [AuthController::class, 'login']);
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/loginSubmit', [AuthController::class, 'loginSubmit']);
+    Route::get('/newUser', [AuthController::class, 'newUser'])->name('newUser');
 });
 
 

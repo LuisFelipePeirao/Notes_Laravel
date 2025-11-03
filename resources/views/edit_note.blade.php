@@ -1,6 +1,6 @@
 @extends('layouts.main_layout')
 
-@section('title', 'New Note')
+@section('title', 'Edit Note')
 @section('content')
 
     <div class="container mt-5">
@@ -48,7 +48,7 @@
                 <div class="row mt-3">
                     <div class="col text-end">
                         <a href="{{ route('home') }}" class="btn btn-primary px-5"><i class="fa-solid fa-ban me-2"></i>Cancel</a>
-                        <button type="submit" class="btn btn-secondary px-5"><i class="fa-regular fa-circle-check me-2"></i>Save</button>
+                        <button type="submit" class="btn btn-secondary px-5"><i class="fa-regular fa-circle-check me-2"></i>Update</button>
                     </div>
                 </div>
             </form>
